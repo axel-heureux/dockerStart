@@ -1,0 +1,9 @@
+FROM php:8.2-apache
+
+# Copie les fichiers du projet dans le dossier web d'Apache
+COPY ./boutique-en-ligne /var/www/html
+
+# Active les extensions PHP nécessaires (ajoutez-en si besoin)
+RUN docker-php-ext-install mysqli pdo pdo_mysql
+
+EXPOSE 80
